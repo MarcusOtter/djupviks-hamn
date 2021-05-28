@@ -1,0 +1,101 @@
+/********************************************************************************************************
+    FONTS
+********************************************************************************************************/
+@font-face {
+    font-family: "Signika Negative";
+    src: url("../resources/fonts/SignikaNegative-Bold.woff2") format("woff2"),
+         url("../resources/fonts/SignikaNegative-Bold.woff")  format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Signika Negative";
+    src: url("../resources/fonts/SignikaNegative-Regular.woff2") format("woff2"),
+         url("../resources/fonts/SignikaNegative-Regular.woff")  format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Righteous";
+    src: url("../resources/fonts/Righteous-Regular.woff2") format("woff2"),
+         url("../resources/fonts/Righteous-Regular.woff")  format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/********************************************************************************************************
+    VARIABLES
+********************************************************************************************************/
+:root {
+    --color-background: #eff2f7;
+    --color-text-dark: #24273b;
+    --color-text-bright:#ddddee; 
+    --color-heading: #0a157b;
+    --color-accent-1: #1728c2;
+    --color-accent-2: #175fcb;
+}
+
+
+/********************************************************************************************************
+    BASE STYLES
+********************************************************************************************************/
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text-dark);
+
+    font-size: 100%;
+    font-family: "Signika Negative",                  /* Desired font */
+        system-ui, -apple-system, BlinkMacSystemFont, /* San Francisco on macOS and iOS */
+        "Segoe UI",                                   /* Windows */
+        "Ubuntu",                                     /* Ubuntu */
+        "Roboto", "Noto Sans", "Droid Sans",          /* Chrome OS and Android with fallbacks */
+        sans-serif;                                   /* The final fallback in sans-serif */
+}
+
+.branding-text {
+    text-transform: none;
+    font-family: "Righteous",                         /* Desired font */
+        system-ui, -apple-system, BlinkMacSystemFont, /* San Francisco on macOS and iOS */
+        "Segoe UI",                                   /* Windows */
+        "Ubuntu",                                     /* Ubuntu */
+        "Roboto", "Noto Sans", "Droid Sans",          /* Chrome OS and Android with fallbacks */
+        sans-serif;                                   /* The final fallback in sans-serif */
+}
+
+main {
+    max-width: 100ch;
+    padding: 2ch;
+    margin: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    text-transform: uppercase;
+    color: var(--color-heading);
+    display: block;
+    text-align: center;
+}
+
+h2::after {
+    margin-top: 8px;
+    content: "";
+    width: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    height: 1em;
+    background-image: url("../resources/img/heading-smile.svg");
+    background-position: cover;
+    background-repeat: no-repeat;
+    display: block;
+}

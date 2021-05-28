@@ -1,0 +1,99 @@
+/********************************************************************************************************
+    HEADER
+********************************************************************************************************/
+header {
+    width: 100%;
+    height: 90vh;
+    background-image: url("../resources/img/header-nature.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 0;
+}
+
+/* Blue gradient under content but over background image */
+header::after {
+    content: "";
+    display: block;
+    background: linear-gradient(#6c97e2aa, #6C98E280 10%, transparent);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
+
+/*  TODO! Move nav outside of header and make it fixed/absolute */
+/* Make header flex box to center and position the weather box?*/
+
+
+/************************
+    NAV 
+************************/
+
+header nav {
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav li {
+    display: block;
+}
+
+header nav a {
+    color: var(--color-heading);
+    text-decoration: none;
+    display: block;
+}
+
+header nav ul a {
+    font-size: 1.3rem;
+    padding: 1rem;
+    margin-right: 1em;
+}
+
+header nav a.branding-text {
+    font-size: 2rem;
+    margin-right: 2rem;
+    padding: 1rem;
+}
+
+/************************
+    WEATHER BOX 
+************************/
+.weather-box {
+    text-align: center;
+    width: 35rem;
+    height: 25rem;
+    padding-top: 4rem;
+    margin: 3rem 5rem;
+    border-radius: 0.5em;
+    background-image: linear-gradient(#D9E7FF, #D9E7FF00);
+    color: var(--color-heading);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.weather-box p {
+    margin: 0;
+}
+
+.weather-box h1 {
+    font-size: 5rem;
+    margin: 0;
+}
+
