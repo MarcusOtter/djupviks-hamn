@@ -59,7 +59,14 @@
     box-sizing: border-box;
 }
 
+::selection {
+    background-color: var(--color-heading);
+    color: var(--color-text-bright);
+}
+
 body {
+    scroll-behavior: smooth;
+
     background-color: var(--color-background);
     color: var(--color-text-dark);
 
@@ -96,11 +103,6 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-heading);
     display: block;
     text-align: center;
-    margin: 0;
-}
-
-h2 {
-    margin-top: 3rem;
 }
 
 h2::after {

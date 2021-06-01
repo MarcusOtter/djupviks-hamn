@@ -102,10 +102,6 @@ header nav a.branding-text {
 /********************************************************************************************************
     ABOUT US
 ********************************************************************************************************/
-section#about-us {
-    width: 100%;
-}
-
 section#about-us .content {
     display: flex;
 }
@@ -113,20 +109,10 @@ section#about-us .content {
 section#about-us .img {
     background-image: url("../resources/img/fence.jpg");
     background-size: cover;
-    background-color: green;
     background-position: center;
     width: 200%;
     border-radius: 1rem;
     margin-right: 3rem;
 }
 
-section#about-us .other {
-    flex-grow: 1;
-    display: block;
-    background-color: red;
-}
-
-section#about-us .text-content {
-    /* flex-grow: 1; */
-}
 
