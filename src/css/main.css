@@ -111,8 +111,11 @@ section#about-us .img {
     background-size: cover;
     background-position: center;
     width: 200%;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     margin-right: 3rem;
 }
 
+/********************************************************************************************************
+    BLOG POSTS
+********************************************************************************************************/
 
