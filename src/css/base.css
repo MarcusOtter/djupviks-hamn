@@ -12,6 +12,15 @@
 
 @font-face {
     font-family: "Signika Negative";
+    src: url("../resources/fonts/SignikaNegative-Light.woff2") format("woff2"),
+         url("../resources/fonts/SignikaNegative-Light.woff")  format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Signika Negative";
     src: url("../resources/fonts/SignikaNegative-Regular.woff2") format("woff2"),
          url("../resources/fonts/SignikaNegative-Regular.woff")  format("woff");
     font-weight: normal;
@@ -54,6 +63,8 @@ body {
     background-color: var(--color-background);
     color: var(--color-text-dark);
 
+    line-height: 1.5;
+    font-weight: 300;
     font-size: 100%;
     font-family: "Signika Negative",                  /* Desired font */
         system-ui, -apple-system, BlinkMacSystemFont, /* San Francisco on macOS and iOS */
@@ -85,6 +96,11 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-heading);
     display: block;
     text-align: center;
+    margin: 0;
+}
+
+h2 {
+    margin-top: 3rem;
 }
 
 h2::after {
@@ -93,7 +109,7 @@ h2::after {
     width: 3em;
     margin-left: auto;
     margin-right: auto;
-    height: 1em;
+    height: 0.5em;
     background-image: url("../resources/img/heading-smile.svg");
     background-position: cover;
     background-repeat: no-repeat;

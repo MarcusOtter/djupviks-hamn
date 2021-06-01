@@ -10,6 +10,7 @@ header {
     background-position: center;
     position: relative;
     z-index: 0;
+    overflow: hidden;
 }
 
 /* Blue gradient under content but over background image */
@@ -40,6 +41,7 @@ header nav {
     display: flex;
     align-items: center;
     position: relative;
+    font-weight: normal;
 }
 
 header nav ul {
@@ -95,5 +97,36 @@ header nav a.branding-text {
 .weather-box h1 {
     font-size: 5rem;
     margin: 0;
+}
+
+/********************************************************************************************************
+    ABOUT US
+********************************************************************************************************/
+section#about-us {
+    width: 100%;
+}
+
+section#about-us .content {
+    display: flex;
+}
+
+section#about-us .img {
+    background-image: url("../resources/img/fence.jpg");
+    background-size: cover;
+    background-color: green;
+    background-position: center;
+    width: 200%;
+    border-radius: 1rem;
+    margin-right: 3rem;
+}
+
+section#about-us .other {
+    flex-grow: 1;
+    display: block;
+    background-color: red;
+}
+
+section#about-us .text-content {
+    /* flex-grow: 1; */
 }
 
