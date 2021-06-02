@@ -37,11 +37,14 @@ header::after {
 ************************/
 
 header nav {
-    padding: 1rem 2rem;
+    padding: 0 2rem;
     display: flex;
     align-items: center;
-    position: relative;
+    position: fixed;
     font-weight: normal;
+    background-color: var(--color-background);
+    width: 100%;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
 }
 
 header nav ul {
@@ -62,17 +65,31 @@ header nav a {
 }
 
 header nav ul a {
-    font-size: 1.3rem;
-    padding: 1rem;
+    font-size: 1rem;
+    padding: 1.5rem 1rem;
     margin-right: 1em;
 }
 
-header nav a.branding-text {
-    font-size: 2rem;
-    margin-right: 2rem;
-    padding: 1rem;
+header nav ul a.current {
+    font-weight: bold;
 }
 
+header ul a:hover,
+header ul a:focus {
+    /* background-color: #1728c2; */
+    text-decoration: underline;
+}
+
+header nav a.branding-text {
+    font-size: 1.5rem;
+    margin-right: 3rem;
+    padding: 0;
+}
+
+header a.branding-text:hover,
+header a.branding-text:focus {
+    text-decoration: underline;
+}
 /************************
     WEATHER BOX 
 ************************/
