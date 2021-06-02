@@ -64,6 +64,10 @@
     color: var(--color-text-bright);
 }
 
+*:focus {
+    outline: 2px dashed var(--color-heading);
+}
+
 body {
     scroll-behavior: smooth;
 

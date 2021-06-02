@@ -10,7 +10,9 @@ header {
     background-position: center;
     position: relative;
     z-index: 0;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Blue gradient under content but over background image */
@@ -26,25 +28,22 @@ header::after {
     z-index: -1;
 }
 
-
-
-/*  TODO! Move nav outside of header and make it fixed/absolute */
-/* Make header flex box to center and position the weather box?*/
-
-
 /************************
     NAV 
 ************************/
 
 header nav {
-    padding: 0 2rem;
     display: flex;
     align-items: center;
     position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     font-weight: normal;
     background-color: var(--color-background);
-    width: 100%;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+
+    --border-width: 4px;
 }
 
 header nav ul {
@@ -62,34 +61,32 @@ header nav a {
     color: var(--color-heading);
     text-decoration: none;
     display: block;
+    border-bottom: var(--border-width) solid transparent;
+    transition-property: border-color;
+    transition-duration: 200ms;
+    transition-timing-function: ease;
+}
+
+header nav a:hover,
+header nav a:focus {
+    border-color: var(--color-heading);
 }
 
 header nav ul a {
-    font-size: 1rem;
-    padding: 1.5rem 1rem;
-    margin-right: 1em;
+    font-size: 1.25rem;
+    padding: 1.5rem 1.5rem calc(1.5rem - var(--border-width)) 1.5rem;
 }
 
 header nav ul a.current {
     font-weight: bold;
-}
-
-header ul a:hover,
-header ul a:focus {
-    /* background-color: #1728c2; */
-    text-decoration: underline;
+    border-color: var(--color-heading);
 }
 
 header nav a.branding-text {
-    font-size: 1.5rem;
-    margin-right: 3rem;
-    padding: 0;
+    font-size: 1.75rem;
+    padding: 1.125rem 2rem calc(1.125rem - var(--border-width)) 2rem;
 }
 
-header a.branding-text:hover,
-header a.branding-text:focus {
-    text-decoration: underline;
-}
 /************************
     WEATHER BOX 
 ************************/
