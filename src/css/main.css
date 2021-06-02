@@ -31,7 +31,6 @@ header::after {
 /************************
     NAV 
 ************************/
-
 header nav {
     display: flex;
     align-items: center;
@@ -44,6 +43,21 @@ header nav {
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
 
     --border-width: 4px;
+}
+
+header nav button {
+    border: none;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: var(--border-width);
+    right: var(--border-width);
+    padding: 1.2rem;
+}
+
+header nav button img {
+    width: 2rem;
+    height: 2rem;
 }
 
 header nav ul {
@@ -63,8 +77,8 @@ header nav a {
     display: block;
     border-bottom: var(--border-width) solid transparent;
     transition-property: border-color;
-    transition-duration: 200ms;
-    transition-timing-function: ease;
+    transition-duration: 100ms;
+    transition-timing-function: ease-in-out;
 }
 
 header nav a:hover,
@@ -85,6 +99,26 @@ header nav ul a.current {
 header nav a.branding-text {
     font-size: 1.75rem;
     padding: 1.125rem 2rem calc(1.125rem - var(--border-width)) 2rem;
+}
+
+@media screen and (max-width: 610px) {
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav button {
+        display: flex;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        
+        /* Screenreader-friendly hide */
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
 }
 
 /************************

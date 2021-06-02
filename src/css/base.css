@@ -117,7 +117,7 @@ h2::after {
     margin-right: auto;
     height: 0.5em;
     background-image: url("../resources/img/heading-smile.svg");
-    background-position: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     display: block;
 }
