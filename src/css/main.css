@@ -41,6 +41,7 @@ header nav {
     font-weight: normal;
     background-color: var(--color-background);
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+    z-index: 1;
 
     --border-width: 4px;
 }
@@ -50,9 +51,10 @@ header nav button {
     cursor: pointer;
     display: none;
     position: absolute;
-    top: var(--border-width);
-    right: var(--border-width);
-    padding: 1.2rem;
+    background-color: var(--color-background);
+    top: 0;
+    right: 0;
+    padding: 1.435rem;
 }
 
 header nav button img {
@@ -112,12 +114,19 @@ header nav a.branding-text {
     }
 
     header nav ul {
+        border-top: 1px solid var(--color-text-dark);
         flex-direction: column;
-        
-        /* Screenreader-friendly hide */
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
+        width: 100%;
+        display: none;
+    }
+
+    header nav ul a {
+        border-left: calc(var(--border-width) * 2) solid transparent;
+        border-bottom: none;
+    }
+
+    header nav ul.show {
+        display: unset;
     }
 }
 

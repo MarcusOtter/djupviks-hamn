@@ -65,7 +65,7 @@
 }
 
 *:focus {
-    outline: 2px dashed var(--color-heading);
+    outline: 2px dashed var(--color-heading) !important;
 }
 
 body {
