@@ -101,37 +101,6 @@ header nav a.branding-text {
     padding: 1.125rem 2rem calc(1.125rem - var(--border-width)) 2rem;
 }
 
-@media screen and (max-width: 610px) {
-    header nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    header nav button {
-        display: flex;
-    }
-
-    header nav ul {
-        border-top: 1px solid var(--color-text-dark);
-        flex-direction: column;
-        width: 100%;
-        display: none;
-    }
-
-    header nav li:nth-of-type(odd) {
-        background-color: var(--color-text-bright);
-    }
-
-    header nav ul a {
-        border-left: calc(var(--border-width) * 2) solid transparent;
-        border-bottom: none;
-    }
-
-    header nav ul.show {
-        display: unset;
-    }
-}
-
 /************************
     LANDING CONTENT
 ************************/
@@ -146,7 +115,7 @@ header nav a.branding-text {
 }
 
 .weather-box {
-    padding: 6rem 3rem 3rem 3rem;
+    padding: 3rem;
     max-width: 100ch;
     text-align: center;
     border-radius: 0.5em;
@@ -154,31 +123,14 @@ header nav a.branding-text {
     color: var(--color-heading);
 }
 
-#skip-to-main-content {
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    bottom: -5rem;
-    min-width: 5rem;
-    min-height: 5rem;
-    border-radius: 50%;
-    background-color: var(--color-background);
-    padding: 3em;
-    text-decoration: none;
-    color: var(--color-heading);
-    font-weight: normal;
-    font-size: 1rem;
-}
-
 .weather-box p.branding-text {
     font-size: 1.25rem;
-    margin: 0 0 -2em 0;
+    margin: 2rem 0 -2em 0;
 }
 
 .weather-box h1 {
     font-size: 6rem;
-    margin: 0;
+    margin: 0 0 1rem 0;
 }
 
 .weather-box h2:nth-of-type(1) {
@@ -212,4 +164,57 @@ section#about-us .img {
 /********************************************************************************************************
     BLOG POSTS
 ********************************************************************************************************/
+
+
+
+/********************************************************************************************************
+    MEDIA QUERIES
+********************************************************************************************************/
+@media screen and (max-width: 100ch) {
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav button {
+        display: flex;
+    }
+
+    header nav ul {
+        border-top: 1px solid var(--color-text-dark);
+        flex-direction: column;
+        width: 100%;
+        display: none;
+    }
+
+    header nav li:nth-of-type(odd) {
+        background-color: var(--color-text-bright);
+    }
+
+    header nav ul a {
+        border-left: calc(var(--border-width) * 2) solid transparent;
+        border-bottom: none;
+    }
+
+    header nav ul.show {
+        display: unset;
+    }
+
+    .landing-content {
+        padding: 78px 0 0 0;
+    }
+
+    .weather-box {
+        padding: 2ch;
+    }
+
+    .weather-box h1 {
+        font-size: 4rem;
+    }
+
+    .weather-box p.branding-text {
+        font-size: 1rem;
+        margin-bottom: -1.5em;
+    }
+}
 
