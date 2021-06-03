@@ -184,10 +184,14 @@ header nav button {
     cursor: pointer;
     display: none;
     position: absolute;
+    width: 32px;
+    height: 32px;
     background-color: var(--color-background);
-    top: 0;
-    right: 0;
-    padding: 1.435rem;
+    background-image: url("../resources/img/icons/hamburgarmeny.svg");
+    background-size: contain;
+
+    top: 24px;
+    right: 24px;
 }
 
 header nav button img {
