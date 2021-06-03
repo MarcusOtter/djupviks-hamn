@@ -125,15 +125,27 @@ header {
     position: relative;
     z-index: 0;
     text-align: left;
+    padding: calc(2rem + 78px) 0 2rem 0; /* Header height */
+}
+
+header h1 {
+    text-transform: none;
+    font-size: 4rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+header#landing-header {
+    padding: 0;
 }
 
 /* CSS-style picture element */
 @media screen and (max-width: 100ch) {
-    header { background-image: url("../resources/img/header-nature-800.png"); }
+    header#landing-header { background-image: url("../resources/img/header-nature-800.png"); }
 }
 
 @media screen and (min-width: 100ch) {
-    header { background-image: url("../resources/img/header-nature-1920.png"); }
+    header#landing-header { background-image: url("../resources/img/header-nature-1920.png"); }
 }
 
 /* Blue gradient under content but over background image */
@@ -227,7 +239,7 @@ header nav a.branding-text {
     LANDING CONTENT
 ************************/
 .landing-content {
-    padding: calc(8rem + 78px) 0 3rem 0;
+    padding: 8rem 0 3rem 0;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -264,6 +276,17 @@ header nav a.branding-text {
 ********************************************************************************************************/
 main section {
     padding-top: 5rem;
+}
+
+main section.img-text-box picture {
+    display: block;
+}
+
+main section.img-text-box img {
+    object-fit: cover;
+    max-width: 100%;
+    min-width: 100%;
+    border-radius: 0.5em;
 }
 
 main h2::after {
@@ -415,6 +438,10 @@ footer > * {
     header nav {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    header h1 {
+        font-size: 3rem;
     }
 
     header nav button {

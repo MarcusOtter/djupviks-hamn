@@ -14,18 +14,19 @@
 
     <script src="js/main.js" type="module"></script>
 
-    <title>Djupvik</title>
+    <title>Hem | Djupvik</title>
+    <meta name="description" content="Välkommen till Djupviks hamn på Gotlands västkust!">
 </head>
 <body>
-    <header>
+    <header id="landing-header">
         <nav>
             <a href="index.html" class="branding-text">Djupvik</a>
             <button id="js-toggle-nav" aria-label="Visa/göm navigering">
                 <img src="resources/img/icons/hamburgarmeny.svg" alt="">
             </button>
             <ul id="js-nav">
-                <li><a href="#" class="current">Hem</a></li>
-                <li><a href="#">Turistmål</a></li>
+                <li><a href="index.html" class="current">Hem</a></li>
+                <li><a href="turistmal.html">Turistmål</a></li>
                 <li><a href="#">Historia</a></li>
                 <li><a href="#">Medlem</a></li>
                 <li><a href="#">English</a></li>
@@ -239,10 +240,10 @@
                 <input id="contact-subject" name="subject" type="text" required>
 
                 <label for="contact-body">Meddelande*</label>
-                <textarea id="contact-body" name="body" type="text" required></textarea>
+                <textarea id="contact-body" name="body" required></textarea>
 
                 <label for="contact-response-type">Kontakta mig via*</label>
-                <select id="contact-response-type" name="responseType" type="text" required>
+                <select id="contact-response-type" name="responseType" required>
                     <option value="" disabled selected>Välj</option>
                     <option value="email">Email</option>
                     <option value="phone">Telefon</option>
