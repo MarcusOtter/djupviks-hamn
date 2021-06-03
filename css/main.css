@@ -3,7 +3,7 @@
 ********************************************************************************************************/
 header {
     width: 100%;
-    min-height: 80vh;
+    /* min-height: 80vh; */
     /* height: 88vh; */
     /* padding: calc(1rem + 78px) 0 1rem 0; */
     background-image: url("../resources/img/header-nature.png");
@@ -71,10 +71,6 @@ header nav ul {
     display: flex;
 }
 
-header nav li {
-    display: block;
-}
-
 header nav a {
     color: var(--color-heading);
     text-decoration: none;
@@ -122,6 +118,10 @@ header nav a.branding-text {
         display: none;
     }
 
+    header nav li:nth-of-type(odd) {
+        background-color: var(--color-text-bright);
+    }
+
     header nav ul a {
         border-left: calc(var(--border-width) * 2) solid transparent;
         border-bottom: none;
@@ -136,63 +136,53 @@ header nav a.branding-text {
     LANDING CONTENT
 ************************/
 .landing-content {
-    margin-top: 78px; /* Nav bar height */
-    padding: 7rem 0 2rem 0;
+    padding: calc(8rem + 78px) 0 3rem 0;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     width: 100%;
     height: 100%;
-}
-
-.landing-content > ul {
-    margin: 0 20vw 0 2rem;
-}
-
-.landing-content > ul a {
-    padding: 1em 2em;
-    background: linear-gradient(90deg, var(--color-accent-1), var(--color-accent-2)); 
-    border-radius: 0.5em;
-    color: var(--color-text-bright);
-    text-decoration: none;
-    display: flex;
-    margin: 1em 0;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.25rem;
-}
-
-.landing-content > ul a img {
-    margin-left: 2rem;
-}
-
-.landing-content > ul a:hover,
-.landing-content > ul a:focus {
-    background: var(--color-accent-2);
-}
-
-.landing-content > ul a:hover img,
-.landing-content > ul a:focus img {
-    transform: translateX(0.5rem);
+    position: relative;
 }
 
 .weather-box {
-    padding: 6rem 6rem 3rem 6rem;
-    max-width: 50vw;
+    padding: 6rem 3rem 3rem 3rem;
+    max-width: 100ch;
     text-align: center;
     border-radius: 0.5em;
     background-image: linear-gradient(#D9E7FF, #D9E7FF00);
     color: var(--color-heading);
 }
 
+#skip-to-main-content {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    bottom: -5rem;
+    min-width: 5rem;
+    min-height: 5rem;
+    border-radius: 50%;
+    background-color: var(--color-background);
+    padding: 3em;
+    text-decoration: none;
+    color: var(--color-heading);
+    font-weight: normal;
+    font-size: 1rem;
+}
+
 .weather-box p.branding-text {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin: 0 0 -2em 0;
 }
 
 .weather-box h1 {
-    font-size: 8rem;
+    font-size: 6rem;
     margin: 0;
+}
+
+.weather-box h2:nth-of-type(1) {
+    font-size: 1rem;
 }
 
 /********************************************************************************************************
