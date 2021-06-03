@@ -300,8 +300,40 @@ section#about-us .img {
 /********************************************************************************************************
     BLOG POSTS
 ********************************************************************************************************/
+#news > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
 
+#news article {
+    display: flex;
+    flex-direction: column;
+    max-width: 40ch;
+    flex-grow: 1;
+    text-align: center;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 0.5em;
+    margin: 1ch 1ch;
+}
 
+#news article p,
+#news article time {
+    margin-left: 2ch;
+    margin-right: 2ch;
+}
+
+#news article h3 {
+    margin-bottom: 0;
+}
+
+#news article img {
+    border-radius: 0.5em 0.5em 0 0;
+    /* max-height: 200px; */
+    width: 100%;
+    object-fit: cover;
+}
 
 /********************************************************************************************************
     MEDIA QUERIES
@@ -358,5 +390,15 @@ section#about-us .img {
     main {
         text-align: center;
     }
+
+    #news article {
+        max-width: 70%;
+    }
+}
+
+@media screen and (max-width: 500px) { 
+    #news article {
+        max-width: 100%;
+    }   
 }
 
