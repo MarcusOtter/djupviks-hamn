@@ -3,6 +3,7 @@
 ********************************************************************************************************/
 header {
     width: 100%;
+    min-height: 80vh;
     /* height: 88vh; */
     /* padding: calc(1rem + 78px) 0 1rem 0; */
     background-image: url("../resources/img/header-nature.png");
@@ -136,7 +137,7 @@ header nav a.branding-text {
 ************************/
 .landing-content {
     margin-top: 78px; /* Nav bar height */
-    padding: 5rem 0 1rem 0;
+    padding: 7rem 0 2rem 0;
     display: flex;
     align-items: center;
     justify-content: center;

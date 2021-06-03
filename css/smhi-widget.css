@@ -7,7 +7,7 @@
     margin: 0;
 }
 
-/* #smhi-widget h2, */
+#smhi-widget h2,
 #smhi-widget h3 {
     color: #0a157b;
     margin: 0;
@@ -20,7 +20,7 @@
 }
 
 #smhi-widget article {
-    padding: 1em;
+    padding: 0.75em;
     background-color: #eff2f7bb;
     border-radius: 0.5em;
     margin: 5px;
@@ -40,6 +40,6 @@
 
 #smhi-widget article ul li > p {
     flex-grow: 1;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     padding: 0 0.5em;
 }
