@@ -79,22 +79,22 @@ body {
     line-height: 1.5;
     font-weight: 300;
     font-size: 100%;
-    font-family: "Signika Negative",                  /* Desired font */
-        system-ui, -apple-system, BlinkMacSystemFont, /* San Francisco on macOS and iOS */
-        "Segoe UI",                                   /* Windows */
-        "Ubuntu",                                     /* Ubuntu */
-        "Roboto", "Noto Sans", "Droid Sans",          /* Chrome OS and Android with fallbacks */
-        sans-serif;                                   /* The final fallback in sans-serif */
+    font-family: "Signika Negative",                    /* Desired font */
+        system-ui, "-apple-system", BlinkMacSystemFont, /* San Francisco on macOS and iOS */
+        "Segoe UI",                                     /* Windows */
+        "Ubuntu",                                       /* Ubuntu */
+        "Roboto", "Noto Sans", "Droid Sans",            /* Chrome OS and Android with fallbacks */
+        sans-serif;                                     /* The final fallback in sans-serif */
 }
 
 .branding-text {
     text-transform: none;
-    font-family: "Righteous",                         /* Desired font */
-        system-ui, -apple-system, BlinkMacSystemFont, /* San Francisco on macOS and iOS */
-        "Segoe UI",                                   /* Windows */
-        "Ubuntu",                                     /* Ubuntu */
-        "Roboto", "Noto Sans", "Droid Sans",          /* Chrome OS and Android with fallbacks */
-        sans-serif;                                   /* The final fallback in sans-serif */
+    font-family: "Righteous",                           /* Desired font */
+        system-ui, "-apple-system", BlinkMacSystemFont, /* San Francisco on macOS and iOS */
+        "Segoe UI",                                     /* Windows */
+        "Ubuntu",                                       /* Ubuntu */
+        "Roboto", "Noto Sans", "Droid Sans",            /* Chrome OS and Android with fallbacks */
+        sans-serif;                                     /* The final fallback in sans-serif */
 }
 
 main {
@@ -125,7 +125,7 @@ header {
     position: relative;
     z-index: 0;
     text-align: left;
-    padding: calc(2rem + 78px) 0 2rem 0; /* Header height */
+    padding: calc(2rem + 82px) 0 2rem 0; /* Header height */
 }
 
 header h1 {
@@ -226,7 +226,7 @@ header nav a:focus {
 
 header nav ul a {
     font-size: 1.25rem;
-    padding: 1.5rem 1.5rem calc(1.5rem - var(--border-width)) 1.5rem;
+    padding: 1.5rem;
 }
 
 header nav ul a.current {
@@ -236,14 +236,14 @@ header nav ul a.current {
 
 header nav a.branding-text {
     font-size: 1.75rem;
-    padding: 1.125rem 2rem calc(1.125rem - var(--border-width)) 2rem;
+    padding: 1.125rem 2rem;
 }
 
 /************************
     LANDING CONTENT
 ************************/
 .landing-content {
-    padding: 8rem 0 3rem 0;
+    padding: 12rem 0 2rem 0;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -541,7 +541,7 @@ footer > * {
     }
 
     header nav ul a {
-        border-left: calc(var(--border-width) * 2) solid transparent;
+        border-left: 0.5rem solid transparent;
         border-bottom: none;
     }
 
@@ -550,7 +550,7 @@ footer > * {
     }
 
     .landing-content {
-        padding: 78px 0 0 0;
+        padding: 82px 0 0 0; /* Navbar height */
     }
 
     .weather-box {
