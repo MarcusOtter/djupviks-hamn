@@ -207,7 +207,7 @@
                 </article>
             </div>
         </section>
-        <section>
+        <section id="guests">
             <h2>Gästhamnen</h2>
             <p>Gästbåtar är hjärtligt välkomna!</p>
             <p>
@@ -222,17 +222,46 @@
             <small>
                 *inkluderat kort för tillträde till servicehuset och 20:- för två duschar
             </small>
-            <p>
-                Hamnfogde Bo Lautin Mobil <a href="tel:+46707920310">0707 - 92 03 10</a>
-            </p>
         </section>
-        <section>
+        <section id="contact-us">
             <h2>Kontakt</h2>
+            <h3>Hamnfogde</h3>
+            <address>
+                Hamnfogde Bo Lautin, mobil <a href="tel:+46707920310">0707-920310</a><br><br>
+                Djupviks hamnförening<br>
+                c/o Ekholm<br>
+                Eksta Hägur 170<br>
+                623 54 Klintehamn<br>
+            </address>
+            <h3>Kontaktformulär</h3>
+            <form action="index.html" method="POST">
+                <label for="contact-subject">Rubrik*</label>
+                <input id="contact-subject" name="subject" type="text" required>
+
+                <label for="contact-body">Meddelande*</label>
+                <textarea id="contact-body" name="body" type="text" required></textarea>
+
+                <label for="contact-response-type">Kontakta mig via*</label>
+                <select id="contact-response-type" name="responseType" type="text" required>
+                    <option value="" disabled selected>Välj</option>
+                    <option value="email">Email</option>
+                    <option value="phone">Telefon</option>
+                    <option value="phone">Kontakta inte mig</option>
+                </select>
+
+                <label for="contact-phone">Telefonnummer</label>
+                <input id="contact-phone" name="phone" type="tel">
+
+                <label for="contact-email">Epostadress</label>
+                <input id="contact-email" name="email" type="email">
+
+                <button type="submit">Skicka</button>
+            </form>
         </section>
     </main>
     <footer>
         <small>Djupvikshamn.se &copy; 2021</small>
-        <address><a href="mailto:info@djupvikshamn.se">info@djupvikshamn.se</a></address>
+        <a href="mailto:info@djupvikshamn.se">info@djupvikshamn.se</a>
     </footer>
 </body>
 </html>
