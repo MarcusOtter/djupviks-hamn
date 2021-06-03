@@ -414,7 +414,7 @@ section#about-us .img {
 }
 
 /********************************************************************************************************
-    KONRAD!!!
+    HISTORIA
 ********************************************************************************************************/
 img#konrad {
     margin: 2rem auto;
@@ -428,6 +428,66 @@ dt {
 
 dd {
     margin: 0;
+}
+
+/********************************************************************************************************
+    MEDLEM
+********************************************************************************************************/
+#member-list table {
+    margin: auto;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#member-list table tbody tr {
+    z-index: -2;
+    position: relative;
+}
+
+#member-list table tbody tr:nth-of-type(even) {
+    background-color: var(--color-text-bright);
+
+}
+
+#member-list table td {
+    border: none;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    #member-list thead tr {
+       position: absolute;
+       top: -9999px;
+       left: -9999px;
+    }
+
+    #member-list table td {
+        padding-left: 40%;
+        text-align: right;
+    }
+    
+    #member-list td:before {
+        position: absolute;
+        left: 2ch;
+        text-align: left;
+        white-space: nowrap;
+        font-weight: bold;
+        z-index: -1;
+    }
+
+    td:nth-of-type(1):before { content: "Förnamn"; }
+    td:nth-of-type(2):before { content: "Efternamn"; }
+    td:nth-of-type(3):before { content: "Epostadress"; }
+    td:nth-of-type(4):before { content: "Telefonnummer"; }
+
+    #member-list td:nth-of-type(4) {
+        margin-bottom: 2rem;
+    }
+
 }
 
 /********************************************************************************************************
