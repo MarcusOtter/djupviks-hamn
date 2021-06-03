@@ -3,16 +3,14 @@
 ********************************************************************************************************/
 header {
     width: 100%;
-    height: 90vh;
+    /* height: 88vh; */
+    /* padding: calc(1rem + 78px) 0 1rem 0; */
     background-image: url("../resources/img/header-nature.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
     z-index: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 /* Blue gradient under content but over background image */
@@ -62,10 +60,13 @@ header nav button img {
     height: 2rem;
 }
 
-header nav ul {
+header ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+header nav ul {
     display: flex;
 }
 
@@ -131,30 +132,75 @@ header nav a.branding-text {
 }
 
 /************************
-    WEATHER BOX 
+    LANDING CONTENT
 ************************/
+.landing-content {
+    margin-top: 78px; /* Nav bar height */
+    padding: 5rem 0 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.landing-content > ul {
+    margin: 0 20vw 0 2rem;
+}
+
+.landing-content > ul a {
+    padding: 1em 2em;
+    background: linear-gradient(90deg, var(--color-accent-1), var(--color-accent-2)); 
+    border-radius: 0.5em;
+    color: var(--color-text-bright);
+    text-decoration: none;
+    display: flex;
+    margin: 1em 0;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25rem;
+}
+
+.landing-content > ul a img {
+    margin-left: 2rem;
+}
+
+.landing-content > ul a:hover,
+.landing-content > ul a:focus {
+    background: var(--color-accent-2);
+}
+
+.landing-content > ul a:hover img,
+.landing-content > ul a:focus img {
+    transform: translateX(0.5rem);
+}
+
 .weather-box {
+    padding: 6rem 6rem 3rem 6rem;
+    max-width: 50vw;
     text-align: center;
-    width: 35rem;
-    height: 25rem;
-    padding-top: 4rem;
-    margin: 3rem 5rem;
     border-radius: 0.5em;
     background-image: linear-gradient(#D9E7FF, #D9E7FF00);
     color: var(--color-heading);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
 }
 
-.weather-box p {
-    margin: 0;
+.weather-box p.branding-text {
+    font-size: 1.5rem;
+    margin: 0 0 -2em 0;
 }
 
 .weather-box h1 {
-    font-size: 5rem;
+    font-size: 8rem;
     margin: 0;
 }
+
+/********************************************************************************************************
+    MAIN
+********************************************************************************************************/
+main section {
+    padding-top: 5rem;
+}
+
 
 /********************************************************************************************************
     ABOUT US

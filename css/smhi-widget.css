@@ -1,0 +1,45 @@
+#smhi-widget {
+    width: 100%;
+    color: #24273b;
+}
+
+#smhi-widget p {
+    margin: 0;
+}
+
+/* #smhi-widget h2, */
+#smhi-widget h3 {
+    color: #0a157b;
+    margin: 0;
+}
+
+#smhi-widget > div {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#smhi-widget article {
+    padding: 1em;
+    background-color: #eff2f7bb;
+    border-radius: 0.5em;
+    margin: 5px;
+    flex-grow: 1;
+}
+
+#smhi-widget article ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#smhi-widget article ul li {
+    display: flex;
+    align-items: center;
+}
+
+#smhi-widget article ul li > p {
+    flex-grow: 1;
+    font-size: 1.25rem;
+    padding: 0 0.5em;
+}

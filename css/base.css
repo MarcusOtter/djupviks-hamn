@@ -68,8 +68,11 @@
     outline: 2px dashed var(--color-heading) !important;
 }
 
-body {
+html {
     scroll-behavior: smooth;
+}
+
+body {
 
     background-color: var(--color-background);
     color: var(--color-text-dark);
@@ -109,7 +112,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-h2::after {
+main h2::after {
     margin-top: 8px;
     content: "";
     width: 3em;

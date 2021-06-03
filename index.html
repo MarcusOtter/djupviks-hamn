@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/smhi-widget.css">
 
     <script src="js/main.js" type="module"></script>
 
@@ -21,7 +22,7 @@
         <nav>
             <a href="index.html" class="branding-text">Djupvik</a>
             <button id="js-toggle-nav" aria-label="Visa/göm navigering">
-                <img src="resources/img/icons/hamburger-menu.svg" alt="">
+                <img src="resources/img/icons/hamburgarmeny.svg" alt="">
             </button>
             <ul id="js-nav">
                 <li><a href="#" class="current">Hem</a></li>
@@ -31,13 +32,125 @@
             </ul>
         </nav>
 
-        <section class="weather-box">
-            <p class="branding-text">Välkommen till</p>
-            <h1 class="branding-text">Djupvik</h1>
-            <!-- Weather data stuff -->
-        </section>
-
-        <a href="#">In English</a>
+        <div class="landing-content">
+            <section class="weather-box">
+                <p class="branding-text">Välkommen till</p>
+                <h1 class="branding-text">Djupvik</h1>
+                <article id="smhi-widget">
+                    <h2>Väderprognos</h2>
+                    <div>
+                        <article>
+                            <h3>Idag 06:00</h3>
+                            <ul>
+                                <li>
+                                    <img src="resources/img/icons/termometer.svg" alt="" width="22" height="22">
+                                    <p>24&deg; C</p>
+                                </li>
+                                <li>
+                                    <img src="resources/img/icons/sol.svg" alt="" width="22" height="22">
+                                    <p>Molnfritt</p>
+                                </li>
+                                <li>
+                                    <img src="resources/img/icons/vind.svg" alt="" width="22" height="22">
+                                    <p>4 m/s N</p>
+                                </li>
+                            </ul>
+                        </article>
+                        <article>
+                            <h3>Idag 12:00</h3>
+                            <ul>
+                                <li>
+                                    <img src="resources/img/icons/termometer.svg" alt="" width="22" height="22">
+                                    <p>24&deg; C</p>
+                                </li>
+                                <li>
+                                    <img src="resources/img/icons/sol.svg" alt="" width="22" height="22">
+                                    <p>Molnfritt</p>
+                                </li>
+                                <li>
+                                    <img src="resources/img/icons/vind.svg" alt="" width="22" height="22">
+                                    <p>4 m/s N</p>
+                                </li>
+                            </ul>
+                        </article>
+                        <article>
+                            <h3>Idag 18:00</h3>
+                            <ul>
+                                <li>
+                                    <img src="resources/img/icons/termometer.svg" alt="" width="22" height="22">
+                                    <p>24&deg; C</p>
+                                </li>
+                                <li>
+                                    <img src="resources/img/icons/sol.svg" alt="" width="22" height="22">
+                                    <p>Molnfritt</p>
+                                </li>
+                                <li>
+                                    <img src="resources/img/icons/vind.svg" alt="" width="22" height="22">
+                                    <p>4 m/s N</p>
+                                </li>
+                            </ul>
+                        </article>
+                        <article>
+                            <h3>Imorgon 06:00</h3>
+                            <ul>
+                                <li>
+                                    <img src="resources/img/icons/termometer.svg" alt="" width="22" height="22">
+                                    <p>24&deg; C</p>
+                                </li>
+                                <li>
+                                    <img src="resources/img/icons/sol.svg" alt="" width="22" height="22">
+                                    <p>Molnfritt</p>
+                                </li>
+                                <li>
+                                    <img src="resources/img/icons/vind.svg" alt="" width="22" height="22">
+                                    <p>4 m/s N</p>
+                                </li>
+                            </ul>
+                        </article>
+                        <article>
+                            <h3>Imorgon 12:00</h3>
+                            <ul>
+                                <li>
+                                    <img src="resources/img/icons/termometer.svg" alt="" width="22" height="22">
+                                    <p>24&deg; C</p>
+                                </li>
+                                <li>
+                                    <img src="resources/img/icons/sol.svg" alt="" width="22" height="22">
+                                    <p>Molnfritt</p>
+                                </li>
+                                <li>
+                                    <img src="resources/img/icons/vind.svg" alt="" width="22" height="22">
+                                    <p>4 m/s N</p>
+                                </li>
+                            </ul>
+                        </article>
+                        <article>
+                            <h3>Imorgon 18:00</h3>
+                            <ul>
+                                <li>
+                                    <img src="resources/img/icons/termometer.svg" alt="" width="26" height="26">
+                                    <p>24&deg; C</p>
+                                </li>
+                                <li>
+                                    <img src="resources/img/icons/sol.svg" alt="" width="26" height="26">
+                                    <p>Molnfritt</p>
+                                </li>
+                                <li>
+                                    <img src="resources/img/icons/vind.svg" alt="" width="26" height="26">
+                                    <p>4 m/s N</p>
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+                </article>
+            </section>
+            <ul>
+                <li><a href="#">In English <img src="resources/img/icons/pil.svg" alt="" width="16" height="16"></a></li>
+                <li><a href="#about-us">Om oss <img src="resources/img/icons/pil.svg" alt="" width="16" height="16"></a></li>
+                <li><a href="#">Gästhamnen <img src="resources/img/icons/pil.svg" alt="" width="16" height="16"></a></li>
+                <li><a href="#">Kontakt <img src="resources/img/icons/pil.svg" alt="" width="16" height="16"></a></li>
+            </ul>
+        </div>
 
     </header>
     <main>
