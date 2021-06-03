@@ -115,15 +115,20 @@ h1, h2, h3, h4, h5, h6 {
 ********************************************************************************************************/
 header {
     width: 100%;
-    /* min-height: 80vh; */
-    /* height: 88vh; */
-    /* padding: calc(1rem + 78px) 0 1rem 0; */
-    background-image: url("../resources/img/header-nature.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
     z-index: 0;
+}
+
+/* CSS-style picture element */
+@media screen and (max-width: 100ch) {
+    header { background-image: url("../resources/img/header-nature-800.png"); }
+}
+
+@media screen and (min-width: 100ch) {
+    header { background-image: url("../resources/img/header-nature-1920.png"); }
 }
 
 /* Blue gradient under content but over background image */
@@ -277,12 +282,19 @@ section#about-us .content {
 }
 
 section#about-us .img {
-    background-image: url("../resources/img/fence.jpg");
-    background-size: cover;
-    background-position: center;
-    width: 200%;
-    border-radius: 0.5rem;
-    margin-right: 3rem;
+    display: none;
+}
+
+@media screen and (min-width: 100ch) {
+    section#about-us .img {
+        display: unset;
+        background-image: url("../resources/img/fence-300.jpg");
+        background-size: cover;
+        background-position: center;
+        width: 200%;
+        border-radius: 0.5rem;
+        margin-right: 3rem;
+    }
 }
 
 /********************************************************************************************************
@@ -341,6 +353,10 @@ section#about-us .img {
     .weather-box p.branding-text {
         font-size: 1rem;
         margin-bottom: -1.5em;
+    }
+
+    main {
+        text-align: center;
     }
 }
 
