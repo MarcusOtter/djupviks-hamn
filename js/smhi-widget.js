@@ -9,27 +9,26 @@ async function fetchData(url) {
     return data;
 }
 
-/** @param {Date[]} desiredForecastDateTimes */
-export async function loadWeatherWidget(currentTime, longitude, latitude, desiredForecastDateTimes) {
+export async function loadWeatherWidget(longitude, latitude, desiredForecastDateTimes) {
+    if (!WIDGET) { return; }
+
     const allData = await fetchData(`https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/${longitude}/lat/${latitude}/data.json`);
     const validTimes = await fetchData("https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/validtime.json");
 
-    // Only include forecasts (no data from the past)
-    // desiredForecastDateTimes = desiredForecastDateTimes.filter(t => t > currentTime);
-
-    // Only include valid times (that have data according to API)
+    const container = document.createElement("div");
     desiredForecastDateTimes = desiredForecastDateTimes.filter(t => validTimes.validTime.includes(isoString(t)));
 
-    const container = document.createElement("div");
+    if (!desiredForecastDateTimes || desiredForecastDateTimes.length === 0) { return; }
 
     for(const forecastDateTime of desiredForecastDateTimes) {
+
         const forecastData = getForecastDataForDateTime(allData, forecastDateTime);
         if (!forecastData) { continue; }
 
         const title = getPrettyName(forecastDateTime);
-        const temperature = getForecastParameterValues(forecastData, "t")[0];
-        const cloudLevel = getForecastParameterValues(forecastData, "tcc_mean")[0];
-        const windSpeed = getForecastParameterValues(forecastData, "ws")[0];
+        const temperature   = getForecastParameterValues(forecastData, "t")[0];
+        const cloudLevel    = getForecastParameterValues(forecastData, "tcc_mean")[0];
+        const windSpeed     = getForecastParameterValues(forecastData, "ws")[0];
         const windDirection = getForecastParameterValues(forecastData, "wd")[0];
 
         const forecastBox = createForecastBox(title, temperature, cloudLevel, windSpeed, windDirection);
@@ -43,12 +42,11 @@ export async function loadWeatherWidget(currentTime, longitude, latitude, desire
 function createForecastBox(title, temperature, cloudLevel, windSpeed, windDirection) {
     const heading = createElementWithAttributes("h3", { innerText: title });
 
-    const ul = createElementWithChildren("ul", [
-        createForecastListItem(`${temperature} °C`, getTemperatureImageSource(temperature), "Temperatur:"),
-        createForecastListItem(getCloudTitle(cloudLevel), getCloudImageSource(cloudLevel), "Molnighet:"),
-        createForecastListItem(getWindTitle(windSpeed, windDirection), ICON_PATH + "vind.svg", "Vindhastighet:", windDirection)
-    ]);
+    const temperatureListItem = createForecastListItem(`${temperature} °C`, getTemperatureImageSource(temperature), "Temperatur:");
+    const cloudListItem = createForecastListItem(getCloudTitle(cloudLevel), getCloudImageSource(cloudLevel), "Molnighet:");
+    const windListItem = createForecastListItem(getWindTitle(windSpeed, windDirection), ICON_PATH + "vind.svg", "Vindhastighet:", windDirection);
 
+    const ul = createElementWithChildren("ul", [temperatureListItem, cloudListItem, windListItem]);
     return createElementWithChildren("article", [heading, ul]);
 }
 
@@ -66,10 +64,7 @@ function createForecastListItem(paragraphText, imageSource, imageAlt, imageRotat
         temperatureImage.style.transform = `rotate(${90 + imageRotation}deg)`;
     }
 
-    return createElementWithChildren("li", [
-        temperatureImage,
-        temperatureParagraph,
-    ]);
+    return createElementWithChildren("li", [temperatureImage, temperatureParagraph]);
 }
 
 function getWindTitle(windSpeed, windDirection) {

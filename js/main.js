@@ -10,8 +10,7 @@ navToggleButton.addEventListener("click", () => {
 
 const now = new Date();
 const tomorrow = addDays(now, 1);
-
-loadWeatherWidget(now, 18.1489, 57.3081, [
+loadWeatherWidget(18.1489, 57.3081, [
     setHour(now, 6),
     setHour(now, 12),
     setHour(now, 18),
