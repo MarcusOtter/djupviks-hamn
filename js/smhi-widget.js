@@ -14,14 +14,13 @@ export async function loadWeatherWidget(longitude, latitude, desiredForecastDate
 
     const allData = await fetchData(`https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/${longitude}/lat/${latitude}/data.json`);
     const validTimes = await fetchData("https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/validtime.json");
+    if (!allData || !validTimes) { return; }
 
-    const container = document.createElement("div");
     desiredForecastDateTimes = desiredForecastDateTimes.filter(t => validTimes.validTime.includes(isoString(t)));
-
     if (!desiredForecastDateTimes || desiredForecastDateTimes.length === 0) { return; }
-
+    
+    const container = document.createElement("div");
     for(const forecastDateTime of desiredForecastDateTimes) {
-
         const forecastData = getForecastDataForDateTime(allData, forecastDateTime);
         if (!forecastData) { continue; }
 
@@ -35,6 +34,7 @@ export async function loadWeatherWidget(longitude, latitude, desiredForecastDate
         container.append(forecastBox);
     }
 
+    if (container.children.length === 0) { return; }
     const heading = createElementWithAttributes("h2", { innerText: "Väderprognos" })
     WIDGET.append(heading, container);
 }

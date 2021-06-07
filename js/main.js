@@ -8,13 +8,17 @@ navToggleButton.addEventListener("click", () => {
     nav.classList.toggle("show");
 });
 
-const now = new Date();
-const tomorrow = addDays(now, 1);
-loadWeatherWidget(18.1489, 57.3081, [
-    setHour(now, 6),
-    setHour(now, 12),
-    setHour(now, 18),
-    setHour(tomorrow, 6),
-    setHour(tomorrow, 12),
-    setHour(tomorrow, 18),
-]);
+const today = new Date();
+const tomorrow = addDays(today, 1);
+loadWeatherWidget(
+    18.1489, // longitude
+    57.3081, // latitude
+    [        // times to show data for
+        setHour(today, 6),
+        setHour(today, 12),
+        setHour(today, 18),
+        setHour(tomorrow, 6),
+        setHour(tomorrow, 12),
+        setHour(tomorrow, 18),
+    ]
+);

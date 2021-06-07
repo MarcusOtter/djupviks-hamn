@@ -41,12 +41,12 @@
     VARIABLES
 ********************************************************************************************************/
 :root {
+    /* From design specification */
     --color-background: #eff2f7;
-    --color-text-dark: #24273b;
-    --color-text-bright:#ddddee; 
-    --color-heading: #0a157b;
-    --color-accent-1: #1728c2;
-    --color-accent-2: #175fcb;
+    --color-text: #24273b;
+    --color-secondary: #dee5f4; 
+    --color-accent: #0a157b;
+    --color-accent-2: #2937af;
 }
 
 /********************************************************************************************************
@@ -59,21 +59,31 @@
 }
 
 ::selection {
-    background-color: var(--color-heading);
-    color: var(--color-text-bright);
+    background-color: var(--color-accent);
+    color: var(--color-background);
 }
 
 *:focus {
-    outline: 2px dashed var(--color-heading) !important;
+    /* !important because it is sometimes overwritten by browsers otherwise (on buttons for example) */
+    outline: 2px dashed var(--color-accent) !important;
+}
+
+*:active:focus {
+    outline-color: var(--color-accent-2) !important;
 }
 
 html {
     scroll-behavior: smooth;
+
+    /* Very poor support for Swedish (20% on CanIUse), but good English support (90%+) */
+    /* Does not affect non-supported browsers, just makes text a bit prettier in supported browsers */
+    -webkit-hyphens: auto;
+    hyphens: auto;
 }
 
 body {
     background-color: var(--color-background);
-    color: var(--color-text-dark);
+    color: var(--color-text);
     text-align: center;
 
     line-height: 1.5;
@@ -106,12 +116,17 @@ main {
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
     text-transform: uppercase;
-    color: var(--color-heading);
+    color: var(--color-accent);
     display: block;
 }
 
 a {
-    color: var(--color-heading);
+    color: var(--color-accent);
+}
+
+a:hover,
+a:focus {
+    color: var(--color-accent-2);
 }
 
 /********************************************************************************************************
@@ -123,7 +138,7 @@ header {
     background-size: cover;
     background-position: center;
     position: relative;
-    z-index: 0;
+    z-index: 1;
     text-align: left;
     padding: calc(2rem + 82px) 0 2rem 0; /* Header height */
 }
@@ -174,7 +189,7 @@ header nav {
     font-weight: normal;
     background-color: var(--color-background);
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
-    z-index: 1;
+    z-index: 2;
 
     --border-width: 4px;
 }
@@ -188,7 +203,8 @@ header nav button {
     height: 32px;
     background-color: var(--color-background);
     background-image: url("../resources/img/icons/hamburgarmeny.svg");
-    background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
 
     top: 24px;
     right: 24px;
@@ -210,18 +226,24 @@ header nav ul {
 }
 
 header nav a {
-    color: var(--color-heading);
+    color: var(--color-accent);
     text-decoration: none;
     display: block;
     border-bottom: var(--border-width) solid transparent;
-    transition-property: border-color;
-    transition-duration: 100ms;
-    transition-timing-function: ease-in-out;
 }
 
 header nav a:hover,
 header nav a:focus {
-    border-color: var(--color-heading);
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    transition-property: border-color;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in;
+}
+
+header nav a:active {
+    color: var(--color-accent-2);
+    border-color: var(--color-accent-2);
 }
 
 header nav ul a {
@@ -231,7 +253,7 @@ header nav ul a {
 
 header nav ul a.current {
     font-weight: bold;
-    border-color: var(--color-heading);
+    border-color: var(--color-accent);
 }
 
 header nav a.branding-text {
@@ -258,7 +280,7 @@ header nav a.branding-text {
     text-align: center;
     border-radius: 0.5em;
     background-image: linear-gradient(#D9E7FF, #D9E7FF00);
-    color: var(--color-heading);
+    color: var(--color-accent);
 }
 
 .weather-box p.branding-text {
@@ -396,8 +418,8 @@ section#about-us .img {
 }
 
 #contact-us button[type="submit"] {
-    background-color: var(--color-heading);
-    color: var(--color-text-bright);
+    background: var(--color-accent);
+    color: var(--color-secondary);
     text-transform: uppercase;
     cursor: pointer;
     padding: 1em 1em;
@@ -405,10 +427,17 @@ section#about-us .img {
 }
 
 #contact-us input:hover,
+#contact-us input:focus,
 #contact-us select:hover,
+#contact-us select:focus,
+#contact-us textarea:hover,
+#contact-us textarea:focus {
+    background-color: var(--color-secondary);
+}
+
 #contact-us button[type="submit"]:hover,
-#contact-us textarea:hover {
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+#contact-us button[type="submit"]:focus {
+    background: var(--color-accent-2);
 }
 
 #contact-us textarea {
@@ -438,23 +467,15 @@ dd {
     MEDLEM
 ********************************************************************************************************/
 #member-list table {
-    margin: auto;
     width: 100%;
     border-collapse: collapse;
 }
 
-#member-list table tbody tr {
-    z-index: -2;
-    position: relative;
-}
-
 #member-list table tbody tr:nth-of-type(even) {
-    background-color: var(--color-text-bright);
-
+    background-color: var(--color-secondary);
 }
 
 #member-list table td {
-    border: none;
     padding: 1rem;
 }
 
@@ -463,6 +484,10 @@ dd {
         display: block;
     }
     
+    #member-list table tbody tr { 
+        position: relative;
+    }
+
     #member-list thead tr {
        position: absolute;
        top: -9999px;
@@ -470,7 +495,6 @@ dd {
     }
 
     #member-list table td {
-        padding-left: 40%;
         text-align: right;
     }
     
@@ -478,9 +502,7 @@ dd {
         position: absolute;
         left: 2ch;
         text-align: left;
-        white-space: nowrap;
         font-weight: bold;
-        z-index: -1;
     }
 
     td:nth-of-type(1):before { content: "Förnamn"; }
@@ -489,9 +511,8 @@ dd {
     td:nth-of-type(4):before { content: "Telefonnummer"; }
 
     #member-list td:nth-of-type(4) {
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
     }
-
 }
 
 /********************************************************************************************************
@@ -504,7 +525,7 @@ footer {
     flex-wrap: wrap;
     margin-top: 5rem;
     padding: 3rem;
-    background-color: var(--color-text-bright);
+    background-color: var(--color-secondary);
 }
 
 footer > * {
@@ -530,14 +551,14 @@ footer > * {
     }
 
     header nav ul {
-        border-top: 1px solid var(--color-text-dark);
+        border-bottom: 1px solid var(--color-accent);
         flex-direction: column;
         width: 100%;
         display: none;
     }
 
     header nav li:nth-of-type(odd) {
-        background-color: var(--color-text-bright);
+        background-color: var(--color-secondary);
     }
 
     header nav ul a {
